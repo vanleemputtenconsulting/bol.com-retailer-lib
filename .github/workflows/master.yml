@@ -1,0 +1,27 @@
+name: Deploy master
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Maven Build
+        run: mvn clean install
+      - name: Slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          payload: |
+            {
+              "type": "mrkdwn",
+              "text": "bol.com-retailer-lib [ ${{ github.event.head_commit.message }} ]: ${{ job.status }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
