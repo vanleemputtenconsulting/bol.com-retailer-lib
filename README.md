@@ -73,30 +73,27 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
+import be.datafarmhouse.bol.ApiException;
+import be.datafarmhouse.bol.model.Commission;
 import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.CommissionsApi;
-
-import java.io.File;
-import java.util.*;
+import be.datafarmhouse.bol.api.CommissionsApi;
 
 public class CommissionsApiExample {
 
-    public static void main(String[] args) {
-        
-        CommissionsApi apiInstance = new CommissionsApi();
-        String ean = "0000007740404"; // String | The EAN number associated with this product.
-        BigDecimal unitPrice = new BigDecimal(); // BigDecimal | The price of the product with a period as a decimal separator. The price should always have two decimals precision.
-        String condition = "NEW"; // String | The condition of the offer.
-        try {
-            Commission result = apiInstance.getCommission(ean, unitPrice, condition);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CommissionsApi#getCommission");
-            e.printStackTrace();
-        }
+  public static void main(String[] args) {
+
+    CommissionsApi apiInstance = new CommissionsApi();
+    String ean = "0000007740404"; // String | The EAN number associated with this product.
+    BigDecimal unitPrice = new BigDecimal(); // BigDecimal | The price of the product with a period as a decimal separator. The price should always have two decimals precision.
+    String condition = "NEW"; // String | The condition of the offer.
+    try {
+      Commission result = apiInstance.getCommission(ean, unitPrice, condition);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CommissionsApi#getCommission");
+      e.printStackTrace();
     }
+  }
 }
 
 ```
