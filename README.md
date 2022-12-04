@@ -37,10 +37,11 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 Add this dependency to your project's POM:
 
 ```xml
+
 <dependency>
-  <groupId>io.swagger</groupId>
-  <artifactId>swagger-java-client</artifactId>
-  <version>1.0.0</version>
+  <groupId>be.datafarmhouse</groupId>
+  <artifactId>bol.com.retailer.api</artifactId>
+  <version>8.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.swagger:swagger-java-client:1.0.0"
+compile "be.datafarmhouse:bol.com.retailer.api:8.0"
 ```
 
 ### Others
@@ -63,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/swagger-java-client-1.0.0.jar`
+* `target/bol.com.retailer.api-8.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
